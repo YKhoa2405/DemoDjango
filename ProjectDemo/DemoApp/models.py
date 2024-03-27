@@ -22,6 +22,8 @@ class Category(models.Model):
         return self.name
 
 class Course(ItemBase):
+    objects = None
+
     class Meta:
         unique_together = ('subject', 'category')
     description = models.TextField(null=True, blank=True) #null, blank có thể để trống trong form
